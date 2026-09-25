@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Orbitron:wght@600;800;900&display=swap');
 
 :root {
-  --bg-dark: #164b70; /* Updated to match header graphic background */
+  --bg-dark: #040b2d; /* Reverted back to your exact dark navy color */
   --purple: #8061ab;
   --blue: #438eb5;
   --neon-green: #02f99c;
