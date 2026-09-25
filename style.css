@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Orbitron:wght@600;800;900&display=swap');
 
 :root {
-  --bg-dark: #040b2d; /* Reverted back to your exact dark navy color */
+  --bg-dark: #040b2d;
   --purple: #8061ab;
   --blue: #438eb5;
   --neon-green: #02f99c;
@@ -18,16 +18,17 @@
 
 body {
   background-color: var(--bg-dark);
+  /* Place the background image on the body with a bottom fade gradient */
+  background-image: 
+    linear-gradient(to bottom, transparent 600px, var(--bg-dark) 1000px),
+    url('assets/avalanche-uk-header.png');
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
   color: var(--text-light);
   font-family: var(--font-body);
   line-height: 1.6;
-}
-
-/* Hero Wrapper: Contains background graphic for both nav & hero */
-.hero-wrapper {
-  background: var(--bg-dark) url('assets/avalanche-uk-header.png') top center / cover no-repeat;
-  position: relative;
-  width: 100%;
+  min-height: 100vh;
 }
 
 /* Header & Nav */
@@ -83,18 +84,30 @@ nav a:hover, nav a.active {
 .hero {
   position: relative;
   z-index: 2;
-  min-height: 450px;
+  min-height: 420px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 2rem 2rem 5rem;
+  padding: 2rem 2rem 4rem;
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
   max-width: 800px;
+}
+
+.hero h1 {
+  font-family: var(--font-heading);
+  font-size: 3.2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+  background: linear-gradient(90deg, var(--purple), var(--blue), var(--neon-green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 2px;
 }
 
 .hero p {
@@ -134,7 +147,7 @@ nav a:hover, nav a.active {
 .btn-secondary {
   border: 2px solid var(--blue);
   color: #ffffff;
-  background-color: rgba(4, 11, 45, 0.4);
+  background-color: rgba(4, 11, 45, 0.5);
 }
 
 .btn-secondary:hover {
@@ -147,18 +160,20 @@ nav a:hover, nav a.active {
 .container {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 4rem 2rem;
+  padding: 2rem 2rem 5rem;
+  position: relative;
+  z-index: 2;
 }
 
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  margin-top: 2rem;
 }
 
 .card {
-  background: rgba(4, 11, 45, 0.4);
+  background: rgba(4, 11, 45, 0.6);
+  backdrop-filter: blur(5px);
   border: 1px solid rgba(128, 97, 171, 0.4);
   border-radius: 8px;
   padding: 2rem;
@@ -179,10 +194,12 @@ nav a:hover, nav a.active {
 /* Footer */
 footer {
   text-align: center;
-  padding: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2.5rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   font-size: 0.9rem;
   color: #8fa3bf;
+  position: relative;
+  z-index: 2;
 }
 
 footer a {
