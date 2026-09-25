@@ -76,25 +76,32 @@ nav a:hover, nav a.active {
 }
 
 /* Hero Section */
+/* Hero Section */
 .hero {
   position: relative;
-  min-height: 480px;
-  background: url('assets/avalanche-uk-header.png') center/contain no-repeat;
-  background-color: var(--bg-dark);
+  min-height: 550px;
+  width: 100%;
+  background: url('assets/avalanche-uk-header.png') center cover / cover no-repeat;
+  background-color: #040b2d;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: 4rem 2rem;
+  overflow: hidden;
 }
 
 .hero-overlay {
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  /* Blends left and right edges smoothly into the #040b2d background */
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0;
+  /* Strong fade on the far left edge to hide the hard image boundary, keeping center clear */
   background: 
-    linear-gradient(90deg, #040b2d 0%, transparent 15%, transparent 85%, #040b2d 100%),
-    linear-gradient(180deg, rgba(4,11,45,0.3) 0%, rgba(4,11,45,0.9) 100%);
+    linear-gradient(to right, #040b2d 0%, transparent 12%, transparent 88%, #040b2d 100%),
+    linear-gradient(to bottom, transparent 70%, #040b2d 100%);
+  pointer-events: none;
 }
 
 .hero-content {
