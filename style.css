@@ -78,8 +78,9 @@ nav a:hover, nav a.active {
 /* Hero Section */
 .hero {
   position: relative;
-  min-height: 500px;
-  background: url('assets/avalanche-uk-header.png') center/cover no-repeat;
+  min-height: 480px;
+  background: url('assets/avalanche-uk-header.png') center/contain no-repeat;
+  background-color: var(--bg-dark);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -90,8 +91,10 @@ nav a:hover, nav a.active {
 .hero-overlay {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  /* Softens the overlay so the graphic shards on the left pop out nicely */
-  background: linear-gradient(180deg, rgba(4,11,45,0.2) 0%, rgba(4,11,45,0.85) 100%);
+  /* Blends left and right edges smoothly into the #040b2d background */
+  background: 
+    linear-gradient(90deg, #040b2d 0%, transparent 15%, transparent 85%, #040b2d 100%),
+    linear-gradient(180deg, rgba(4,11,45,0.3) 0%, rgba(4,11,45,0.9) 100%);
 }
 
 .hero-content {
